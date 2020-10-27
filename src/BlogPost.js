@@ -3,6 +3,13 @@ import React, { Component } from 'react';
 import Comment from './Comment'
 
 export default class BlogPost extends Component {
+
+  generateComments =(comments) => {
+    return comments.map((comment, index) => <Comment 
+      key ={index}
+      commentText = {comment}
+    />)
+  }
   render() {
     
     const comments = [
@@ -19,9 +26,10 @@ export default class BlogPost extends Component {
         Still I'll rise.<br/>
         -Maya Angelou<br/>
 
-        <Comment commentText={comments[0]} />
+        {/* <Comment commentText={comments[0]} />
         <Comment commentText={comments[1]} />
-        <Comment commentText={comments[2]} />
+        <Comment commentText={comments[2]} /> */}
+        {this.generateComments(comments)}
         
     
       
